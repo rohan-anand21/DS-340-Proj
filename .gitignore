@@ -4,3 +4,4 @@ uvicorn.log
 uvicorn_8001.log
 issues_report.md
 vercel.json
+run_server.sh
