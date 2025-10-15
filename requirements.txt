@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2
+tensorflow
+transformers
+torch 
+scikit-learn
+pandas
+numpy
+seaborn
+matplotlib
+sentencepiece

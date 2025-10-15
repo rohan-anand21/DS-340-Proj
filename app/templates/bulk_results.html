@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bulk Results</title>
+</head>
+<body>
+    <h1>Bulk Prediction Results for <i>{{ filename }}</i></h1>
+    <h3>Overall Accuracies:</h3>
+    <ul>
+        <li>Simple LSTM: <strong>{{ accuracies.simple_lstm }}</strong></li>
+        <li>Stacked LSTM: <strong>{{ accuracies.stacked_lstm }}</strong></li>
+        <li>BERT: <strong>{{ accuracies.bert }}</strong></li>
+    </ul>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <tr style="background-color:#f2f2f2;">
+            <th>Review Text</th>
+            <th>True Label</th>
+            <th>Simple LSTM</th>
+            <th>Stacked LSTM</th>
+            <th>BERT</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td style="padding: 8px;">{{ result.review[:200] }}...</td>
+            <td style="padding: 8px;">{{ result.true_label }}</td>
+            <td style="padding: 8px;">{{ result.pred_simple }}</td>
+            <td style="padding: 8px;">{{ result.pred_stacked }}</td>
+            <td style="padding: 8px;">{{ result.pred_bert }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

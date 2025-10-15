@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Hotel Review Sentiment Analysis</h1>
+    <p><a href="/architecture">View Project Architecture</a></p>
+    <hr>
+    <h2>Single Review Prediction</h2>
+    <form action="/api/predict" method="post">
+        <textarea name="review_text" rows="5" cols="70">{{ review_text or '' }}</textarea><br><br>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if prediction_simple_lstm %}
+    <h3>Predictions:</h3>
+    <ul>
+        <li>Simple LSTM: <strong>{{ prediction_simple_lstm }}</strong></li>
+        <li>Stacked LSTM: <strong>{{ prediction_stacked_lstm }}</strong></li>
+        <li>BERT: <strong>{{ prediction_bert }}</strong></li>
+    </ul>
+    {% endif %}
+    <hr>
+    <h2>Bulk CSV Upload</h2>
+    <form action="/api/bulk-predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv">
+        <input type="submit" value="Upload & Test">
+    </form>
+</body>
+</html>
