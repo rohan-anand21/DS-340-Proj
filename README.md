@@ -1,3 +1,14 @@
+---
+title: Hotel Sentiment Analysis
+emoji: 🏨
+colorFrom: blue
+colorTo: purple
+sdk: docker
+sdk_version: "latest"
+app_file: Dockerfile
+pinned: false
+---
+
 ## Multi-Model Hotel Sentiment Analysis
 
-This project powers a FastAPI web app that compares three sentiment analysis models on hotel reviews: a simple LSTM, a stacked LSTM, and a fine-tuned BERT classifier. Users can submit individual reviews or upload CSV files to see predictions and accuracy side by side. Supporting scripts cover data preparation, model training, and artifact management, while the API serves both interactive pages and prediction endpoints.
+This Space hosts a FastAPI demo comparing three sentiment models on hotel reviews: a simple LSTM, a stacked LSTM, and a fine-tuned BERT classifier. Enter a single review or upload a CSV with `reviews.text` and `reviews.rating` columns to see how each model scores the sentiment. Inside the repository you’ll find the training scripts, preprocessing utilities, and saved artifacts that back the interactive UI.
